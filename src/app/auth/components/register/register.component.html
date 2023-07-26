@@ -25,7 +25,13 @@
             />
           </fieldset>
           <div class="center-button">
-            <button class="retro-button" type="submit">Sign up</button>
+            <button
+              class="retro-button"
+              type="submit"
+              [disabled]="isSubmitting$ | async"
+            >
+              Sign up
+            </button>
           </div>
         </fieldset>
       </form>
