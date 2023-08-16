@@ -5,6 +5,10 @@
       <p class="retro-p">
         <a [routerLink]="['/login']">Have an account?</a>
       </p>
+      <mc-backend-error-message
+        *ngIf="backendErrors$ | async"
+        [backendErrors]="backendErrors$ | async"
+      ></mc-backend-error-message>
       <form class="retro-form" [formGroup]="form" (ngSubmit)="onSubmit()">
         <fieldset>
           <fieldset>
