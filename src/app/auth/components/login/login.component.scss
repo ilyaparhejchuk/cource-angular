@@ -1,0 +1,124 @@
+.main-container {
+  display: block;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.retro-border {
+  border: 1px #333;
+  border-radius: 10px;
+  background-color: #fffcfc;
+  box-shadow: 5px 5px 40px rgba(0, 0, 0, 0.3);
+  padding: 3%;
+}
+
+.retro-h1 {
+  font-family: 'Courier New', monospace;
+  font-size: 48px;
+  color: #333;
+  padding: 10px 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.retro-p {
+  font-family: 'Courier New', monospace;
+  font-size: 18px;
+  color: #333;
+  text-decoration: none;
+  position: relative;
+  text-align: center;
+}
+
+.retro-p::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.retro-p:hover::after {
+  transform: scaleX(1);
+}
+
+.retro-p:visited {
+  color: #666;
+}
+
+.retro-p:visited::after {
+  background-color: #666;
+}
+
+.center-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.retro-button {
+  display: flex;
+  margin: 10% 0 0 0;
+  padding: 10px 20px;
+  background-color: #f8f8f8;
+  border: 1px solid #c0c0c0;
+  color: #333;
+  font-family: 'Courier New', monospace;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+}
+
+.retro-button:hover {
+  background-color: #e0e0e0;
+  color: #555;
+}
+
+.retro-button:active {
+  background-color: #ccc;
+  color: #222;
+}
+
+.retro-button:disabled {
+  background-color: #dadada;
+  color: #cec8c8;
+  border: 1px solid #c0c0c0;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  cursor: not-allowed;
+  transition:
+    background-color 1.5s,
+    color 1.5s;
+}
+
+.retro-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  margin: 0 auto;
+}
+
+.retro-form input[type='text'] {
+  padding: 8px 12px;
+  margin-bottom: 10px;
+  border: 1px solid #333;
+  background-color: #e5e5e5;
+  font-family: 'Courier New', monospace;
+  font-size: 21px;
+  color: #333;
+  border-radius: 4px;
+}
