@@ -1,0 +1,36 @@
+.navigation-bar {
+  background-color: #333; /* Цвет фона */
+  padding: 10px 0; /* Поля сверху и снизу */
+}
+
+.container {
+  max-width: 960px; /* Максимальная ширина контейнера */
+  margin: 0 auto; /* Центрирование контейнера */
+}
+
+ul {
+  list-style-type: none; /* Убираем маркеры списка */
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  display: inline-block; /* Располагаем элементы в ряд */
+  margin-right: 20px; /* Расстояние между элементами */
+}
+
+a {
+  text-decoration: none; /* Убираем подчеркивание у ссылок */
+  color: #fff; /* Цвет текста */
+  font-size: 18px; /* Размер шрифта */
+  font-family: 'Courier New', monospace; /* Шрифт */
+  text-transform: uppercase; /* Преобразование текста в верхний регистр */
+  letter-spacing: 1px; /* Расстояние между буквами */
+  padding-bottom: 3px; /* Отступ снизу */
+  border-bottom: 2px solid transparent; /* Линия под текстом (изначально невидимая) */
+  transition: border-bottom 0.3s; /* Плавный переход */
+}
+
+a:hover {
+  border-bottom: 2px solid #fff; /* Линия под текстом при наведении */
+}
