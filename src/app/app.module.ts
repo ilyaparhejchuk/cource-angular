@@ -7,9 +7,12 @@ import { AuthModule } from './auth/auth.module';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { EffectsModule } from '@ngrx/effects';
 import { TopBarModule } from './shared/modules/topBar/topBar.module';
+import { PersistenceService } from './shared/services/persistence.service';
+import { AuthInterceptorService } from './shared/services/authinterceptor.service';
+import { GlobalFeedModule } from './globalFeed/globalFeed.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,9 +27,17 @@ import { TopBarModule } from './shared/modules/topBar/topBar.module';
       maxAge: 25,
       logOnly: environment.production,
     }),
-    TopBarModule
+    TopBarModule,
+    GlobalFeedModule,
   ],
-  providers: [],
+  providers: [
+    PersistenceService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

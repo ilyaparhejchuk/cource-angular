@@ -2,13 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Store, select } from '@ngrx/store';
 import { registerAction } from '../../store/actions/register.actions';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import {
   isSubmittingSelector,
   validationErrorsSelector,
 } from '../../store/selectors';
 import { AuthService } from '../../services/auth.service';
-import { CurrentUserInterface } from 'src/app/shared/types/currentUser.interface';
 import { RegisterRequestInterface } from '../../types/registerRequest.interface';
 import { BackendErrorsInterface } from 'src/app/shared/types/backendErrors.interface';
 

@@ -17,7 +17,6 @@ export class AuthService {
 
   register(data: RegisterRequestInterface): Observable<CurrentUserInterface> {
     const url = `${environment.apiUrl}/users`;
-
     return this.http
       .post<AuthResponseInterface>(url, data)
       .pipe(map(this.getUser));
@@ -25,9 +24,15 @@ export class AuthService {
 
   login(data: LoginRequestInterface): Observable<CurrentUserInterface> {
     const url = `${environment.apiUrl}/users/login`;
-
     return this.http
       .post<AuthResponseInterface>(url, data)
       .pipe(map(this.getUser));
+  }
+
+  getCurrentUser(): Observable<CurrentUserInterface> {
+    const url = `${environment.apiUrl}/user`;
+    return this.http
+      .get(url)
+      .pipe(map(this.getUser as any));
   }
 }
