@@ -1,4 +1,4 @@
 export interface GetFeedResponseInterface {
-    article: any,
+    articles: any,
     articalesCount: number,
 }
