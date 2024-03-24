@@ -1,0 +1,15 @@
+<span *ngIf="isLoading$ | async">Loading...</span>
+<span *ngIf="error$ | async">ERROR</span>
+
+<div *ngIf="popularTags$ | async as aaa">
+  <p>Popular tags</p>
+  {{ aaa }}
+  <div>
+    <a
+      *ngFor="let popularTag of popularTags$ | async"
+      [routerLink]="['/tags', popularTag]"
+    >
+      {{ popularTag }}
+    </a>
+  </div>
+</div>

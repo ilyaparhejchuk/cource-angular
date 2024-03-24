@@ -7,10 +7,12 @@ import { reducers } from './store/reducers';
 import { StoreModule } from '@ngrx/store';
 import { FeedService } from './services/feed.servive';
 import { RouterModule } from '@angular/router';
+import { PaginationModule } from '../pagination/pagination.module';
+import { TagListModule } from '../tagList/tagList.module';
 
 
 @NgModule({
-  imports: [CommonModule, RouterModule, EffectsModule.forFeature([GetFeedEffect]), StoreModule.forFeature('feed', reducers)],
+  imports: [CommonModule, RouterModule, EffectsModule.forFeature([GetFeedEffect]), StoreModule.forFeature('feed', reducers), PaginationModule, TagListModule],
   declarations: [FeedComponent],
   exports: [FeedComponent],
   providers: [FeedService]

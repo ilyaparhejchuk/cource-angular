@@ -2,7 +2,10 @@
 <div *ngIf="error$ | async">Some error happend...</div>
 
 <div *ngIf="feed$ | async">
-  <div class="article-preview" *ngFor="let article of (feed$ | async)?.articles">
+  <div
+    class="article-preview"
+    *ngFor="let article of (feed$ | async)?.articles"
+  >
     <div class="article-meta">
       <a [routerLink]="['/profiles', article.author.username]">
         <img [src]="article.author.image" />
@@ -18,8 +21,14 @@
     <a [routerLink]="['/articles', article.slug]">
       <h1>{{ article.title }}</h1>
       <p>{{ article.description }}</p>
-      HEREIS LIST OF TAGS
+      TAG LIST:
+      <mc-tag-list [tags]="article.tagList"></mc-tag-list>
     </a>
   </div>
-  PAGINATION
+  <mc-pagination
+    [total]="(feed$ | async)?.articlesCount"
+    [limit]="limit"
+    [url]="baseUrl"
+    [currentPage]="currentPage"
+  ></mc-pagination>
 </div>
